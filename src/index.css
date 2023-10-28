@@ -5,6 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #262820;
+
+  /*variables*/
+
+  --color-background: #26282D;
+  --color-item-background: #3C3E43;
+  --color-grey: #9E9E9E;
+  --color-light-grey: #F5F5F5;
+  --color-white: #fff;
+  --color-link: #3376CC;
+  --color-dead: #C74C36;
+  --color-alive: #75c857;
+  --color-dark: #202328;
+
+  /*mixins*/
 }
 
 code {

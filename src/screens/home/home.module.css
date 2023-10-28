@@ -1,0 +1,7 @@
+.wrapper {
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}

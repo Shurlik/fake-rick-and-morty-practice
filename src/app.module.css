@@ -1,0 +1,31 @@
+:root {
+    /*variables*/
+    --color-background: #26282D;
+    --color-item-background: #3C3E43;
+    --color-grey: #9E9E9E;
+    --color-light-grey: #F5F5F5;
+    --color-white: #fff;
+    --color-link: #3376CC;
+    --color-dead: #C74C36;
+    --color-alive: #75c857;
+    --color-dark: #202328;
+    --color-opacity-dark: #00000055;
+    /*---*/
+
+    /*mixins*/
+    --centered: {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    };
+    /*---*/
+}
+
+body {
+
+    /*background-color: var(--color-background);*/
+    font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.app {
+}

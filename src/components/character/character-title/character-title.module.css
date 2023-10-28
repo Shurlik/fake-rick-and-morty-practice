@@ -1,0 +1,40 @@
+.wrapper {
+}
+
+.wrapper h2 {
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: 800;
+    font-family: Roboto;
+    color: var(--color-light-grey)
+}
+
+.status {
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+}
+
+.alive {
+    background-color: var(--color-alive);
+}
+
+.dead {
+    background-color: var(--color-dead);
+}
+
+.unknown {
+    background-color: var(--color-grey);
+}
+
+.data {
+    color: var(--color-white)
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+
+}

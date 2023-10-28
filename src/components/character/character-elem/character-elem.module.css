@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-item-background);
+}
+
+.content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image {
+}
+
+.image img {
+    height: 100%;
+    flex: 1
+}

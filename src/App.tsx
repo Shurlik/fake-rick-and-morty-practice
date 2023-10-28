@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from "./screens/home";
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import {API} from "./services/get-data";
+import './reset.css'
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+import styles from './app.module.css'
+import {Container} from "@mui/material";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+const client = new ApolloClient({
+  uri: API,
+  cache: new InMemoryCache()
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Container
+        className={styles.app}
+        maxWidth={'xl'}
+      >
+        <ApolloProvider client={client}>
+          <Home/>
+        </ApolloProvider>
+      </Container>
+    </ThemeProvider>
   );
 }
 
