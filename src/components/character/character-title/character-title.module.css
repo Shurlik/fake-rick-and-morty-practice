@@ -1,12 +1,13 @@
 .wrapper {
 }
 
-.wrapper h2 {
+.wrapper h2, .wrapper a {
     font-size: 27px;
     line-height: 30px;
     font-weight: 800;
     font-family: Roboto;
-    color: var(--color-light-grey)
+    color: var(--color-light-grey);
+    text-decoration: none;
 }
 
 .status {

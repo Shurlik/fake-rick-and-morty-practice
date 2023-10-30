@@ -3,7 +3,7 @@ import styles from './character-content.module.css'
 
 interface CharacterContentProps {
   title: string;
-  text: string
+  text: string;
 }
 
 const CharacterContent:  React.FC<CharacterContentProps>  = ({title, text}) => {

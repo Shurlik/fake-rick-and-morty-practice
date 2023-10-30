@@ -1,13 +1,19 @@
 import React from 'react';
-import Home from "./screens/home";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 import {API} from "./services/get-data";
 import './reset.css'
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import {BrowserRouter} from "react-router-dom";
 
 import styles from './app.module.css'
 import {Container} from "@mui/material";
+import Router from "./route";
+import Header from "./components/header";
+import FabIcon from "./components/fab";
+import {persistor, store} from "./store";
+import {PersistGate} from "redux-persist/integration/react";
+import {Provider} from "react-redux";
 
 const darkTheme = createTheme({
   palette: {
@@ -23,15 +29,26 @@ const client = new ApolloClient({
 function App() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <Container
-        className={styles.app}
-        maxWidth={'xl'}
-      >
+      <BrowserRouter>
+        <CssBaseline/>
         <ApolloProvider client={client}>
-          <Home/>
+          <Provider store={store}>
+            <PersistGate
+              loading={null}
+              persistor={persistor}
+            >
+              <Header/>
+              <Container
+                className={styles.app}
+                maxWidth={'xl'}
+              >
+                <FabIcon/>
+                <Router/>
+              </Container>
+            </PersistGate>
+          </Provider>
         </ApolloProvider>
-      </Container>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

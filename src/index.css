@@ -19,6 +19,7 @@ body {
   --color-dead: #C74C36;
   --color-alive: #75c857;
   --color-dark: #202328;
+  --color-black: #000;
 
   /*mixins*/
 }

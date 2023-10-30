@@ -7,3 +7,13 @@ export interface CharacterType {
   location: {name: string}
   origin: {name: string}
 }
+
+export type CsvType = {
+  id: string | number
+  name: string,
+  location: string,
+  status: string,
+  origin: string,
+  image: string,
+  species: string,
+}

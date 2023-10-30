@@ -1,0 +1,17 @@
+.container {
+    background-color: var(--color-white);
+    height: 30vh;
+    position: relative;
+}
+.title {
+    color: var(--color-dark);
+    font-size: 90px;
+    font-weight: 900;
+    z-index: 9999;
+}
+
+.image {
+    height: 100%;
+    border: 1px solid red;
+
+}

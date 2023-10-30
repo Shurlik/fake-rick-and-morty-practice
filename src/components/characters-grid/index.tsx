@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from './characters-grid.module.css'
 import Loader from '../loader'
 import {CharacterType} from "../../types";
 import CharacterElem from "../character/character-elem";
 import {Grid} from "@mui/material";
+import {useAppDispatch} from "../../hooks/useAppStore";
+import {setData} from "../../store/data/data.slices";
 
 
 interface ICharacterGridProps {
@@ -13,7 +15,15 @@ interface ICharacterGridProps {
 
 
 const CharactersGrid: React.FC<ICharacterGridProps> = ({characters, loading}) => {
+  const dispatch = useAppDispatch()
 
+  useEffect(() => {
+    if (characters && characters.length >= 0 && !loading) {
+      dispatch(setData(characters))
+    } else {
+      dispatch(setData([]))
+    }
+  }, [characters, loading])
 
   if (loading) {
     return <Loader/>

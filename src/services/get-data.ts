@@ -47,3 +47,21 @@ export const charactersQuery = gql`
         }
     }
 `
+
+export const characterDetailQuery = gql`
+    query GetCharacterDetails($id: ID!){
+        character(id: $id) {
+            id
+            name
+            status
+            origin {
+                name
+            }
+            location {
+                name
+            }
+            image
+            species
+        }
+    }
+`

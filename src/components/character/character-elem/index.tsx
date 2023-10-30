@@ -23,7 +23,7 @@ const CharacterElem: React.FC<CharacterType> = ({id, name, species, status, imag
         />
       </div>
       <div className={styles.content}>
-        <CharacterTitle {...{name, status, species}} />
+        <CharacterTitle {...{name, status, species, id}} />
         <CharacterContent
           title={locationTitle}
           text={location.name}

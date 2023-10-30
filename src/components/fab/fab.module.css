@@ -1,0 +1,22 @@
+.wrapper {
+    position: fixed;
+    bottom: 50px;
+    right: 50%;
+    transform: translateX(600px);
+}
+
+.wrapper div {
+    transition: .5s
+
+}
+
+.opened {
+    height: 100px;
+    opacity: 1;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    height: 0;
+    opacity: 0;
+}
