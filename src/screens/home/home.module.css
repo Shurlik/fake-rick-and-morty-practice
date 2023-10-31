@@ -1,9 +1,23 @@
 .wrapper {
-    /*padding: 30px 0;*/
 
 }
 .pagination {
     display: flex;
     justify-content: center;
     padding: 15px 0;
+}
+.form{
+}
+.input {
+    margin-bottom: 15px;
+}
+
+.inputs {
+    border-radius: 8px;
+    position: absolute;
+    background-color: var(--color-dark-theme);
+    padding: 0 15px 0 15px;
+}
+
+.inputsWrapper {
 }

@@ -8,10 +8,10 @@
     font-size: 90px;
     font-weight: 900;
     z-index: 9999;
+    text-align: center;
 }
 
 .image {
     height: 100%;
-    border: 1px solid red;
 
 }

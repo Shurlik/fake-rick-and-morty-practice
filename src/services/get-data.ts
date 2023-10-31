@@ -23,8 +23,21 @@ import {gql} from "@apollo/client";
 export const API = 'https://rickandmortyapi.com/graphql'
 
 export const charactersQuery = gql`
-    query GetCharacters($page: Int){
-        characters(page: $page) {
+    query GetCharacters(
+        $page: Int,
+        $name: String,
+        $status: String,
+        $species: String,
+        $type: String,
+        $gender: String
+    ){
+        characters(page: $page, filter: {
+            name: $name
+            status:$status
+            species:$species
+            type:$type
+            gender:$gender
+        }) {
             info {
                 count
                 pages

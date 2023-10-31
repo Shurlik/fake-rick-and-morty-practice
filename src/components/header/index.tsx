@@ -24,8 +24,6 @@ const Header = () => {
       <Box
         position={'absolute'}
         bottom={-5}
-        // className={styles.image}
-        // justifyContent={'center'}
       >
         <RickMortyBig/>
       </Box>

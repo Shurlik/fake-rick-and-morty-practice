@@ -17,3 +17,12 @@ export type CsvType = {
   image: string,
   species: string,
 }
+
+export type GetUsersType = {
+  currentPage: number,
+  name?: string,
+  status?: string,
+  species?: string,
+  type?: string,
+  gender?: string
+}
