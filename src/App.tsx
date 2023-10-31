@@ -45,9 +45,9 @@ function App() {
                 maxWidth={'xl'}
               >
                 <FabIcon/>
-                <History />
                 <Router/>
               </Container>
+                <History />
             </PersistGate>
           </Provider>
         </ApolloProvider>
