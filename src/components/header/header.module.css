@@ -9,6 +9,7 @@
     font-weight: 900;
     z-index: 9999;
     text-align: center;
+    cursor: pointer;
 }
 
 .image {

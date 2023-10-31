@@ -1,0 +1,18 @@
+.wrapper {
+    background-color: var(--color-opacity-white);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.itemWrapper {
+
+}
+.text {
+    color: var(--color-dark)
+}

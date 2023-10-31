@@ -10,14 +10,12 @@ export function useHistory() {
   const getHistory = () => history
 
   const saveToHistory = (data: string) => {
-    console.log({data})
     const updatedData = new Date().toISOString() + ' - ' + data
-    console.log({updatedData})
+    const tmpArr = [...history]
+    tmpArr.push(updatedData)
 
-    const updatedHistory = [...history]
-    console.log({history})
 
-    // dispatch(setHistory(updatedHistory))
+    dispatch(setHistory(tmpArr))
   }
 
   return {getHistory, saveToHistory}

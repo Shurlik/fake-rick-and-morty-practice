@@ -14,7 +14,7 @@
 
 .inputs {
     border-radius: 8px;
-    position: absolute;
+    position: absolute!important;
     background-color: var(--color-dark-theme);
     padding: 0 15px 0 15px;
 }

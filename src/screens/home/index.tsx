@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import * as React from "react";
+import {useState} from "react";
 import styles from "./home.module.css"
 import {
   Button,
@@ -10,12 +11,13 @@ import {
   MenuItem,
   Pagination,
   Select,
-  TextField
+  TextField,
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import {useApolloGraphql} from "../../hooks/useApolloGraphql";
 import {Controller, useForm} from "react-hook-form";
 import CharactersGrid from "../../components/characters-grid";
+import {useHistory} from "../../hooks/useHistory";
 
 type RequestDataType = {
   charName?: string
@@ -61,6 +63,7 @@ const Home = () => {
 
   const filters = ['Character', 'Location', 'Episodes']
   const [isFilterOpen, setIsFilterOpen] = useState(false)
+  const {saveToHistory} = useHistory()
 
   const stepHandler = (_: any, value: number) => {
     setCurrentPage(value)
@@ -68,7 +71,6 @@ const Home = () => {
   }
 
   const handleChange = (event: any) => {
-
     const {
       target: {value},
     } = event;
@@ -94,8 +96,10 @@ const Home = () => {
       type: data.charType,
       gender: data.charGender,
     }
-    console.log({data})
     setCharFilters(params)
+
+    const historyString = `Пошук за параметрами - ${data.charName ? ' Персонаж: ' + data?.charName + ';' : ''}${data.charStatus ? ' Статус: ' + data.charStatus + ';' : ''}${data.charSpecies ? ' Раса: ' + data.charSpecies + ';' : ''}${data.charType ? ' Тип створіння:' + data.charType + ';' : ''}${data.charGender ? ' Пол:' + data.charGender + ';' : ''}`
+    saveToHistory(historyString)
   }
 
   const selectOpenHandler = () => {
@@ -117,7 +121,6 @@ const Home = () => {
           marginBottom={3}
           display={'flex'}
           gap={5}
-          // justifyContent={'center'}
         >
           <FormControl
             sx={{width: 200}}
@@ -150,7 +153,6 @@ const Home = () => {
               ))}
             </Select>
           </FormControl>
-
           <Box
             position={'relative'}
             sx={{width: 270}}

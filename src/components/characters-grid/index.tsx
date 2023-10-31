@@ -1,4 +1,5 @@
-import React, {useEffect} from "react";
+import * as React from "react";
+import {useEffect} from "react";
 import styles from './characters-grid.module.css'
 import Loader from '../loader'
 import {CharacterType} from "../../types";
@@ -35,7 +36,7 @@ const CharactersGrid: React.FC<ICharacterGridProps> = ({characters, loading}) =>
       spacing={4}
       className={styles.wrapper}
     >
-      {characters.map(character => <CharacterElem
+      {characters.map((character: CharacterType) => <CharacterElem
         key={character.id}
         id={character.id}
         name={character.name}

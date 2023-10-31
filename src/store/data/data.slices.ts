@@ -3,13 +3,14 @@ import {createSlice} from "@reduxjs/toolkit";
 
 type InitStateType = {
   data: CharacterType[],
-  history: string[]
-
+  history: string[],
+  showHistory: boolean
 }
 
 const initialState = {
   data: [],
-  history: []
+  history: [],
+  showHistory: false
 } as InitStateType
 
 
@@ -29,6 +30,9 @@ const dataSlice = createSlice({
     clearHistory(state) {
       state.history = []
     },
+    setShowHistory(state, action) {
+      state.showHistory = action.payload
+    },
   }
 })
 
@@ -37,5 +41,6 @@ export const {
   setData,
   clearData,
   setHistory,
-  clearHistory
+  clearHistory,
+  setShowHistory
 } = dataSlice.actions

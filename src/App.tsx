@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
 import {API} from "./services/get-data";
 import './reset.css'
@@ -14,6 +14,7 @@ import FabIcon from "./components/fab";
 import {persistor, store} from "./store";
 import {PersistGate} from "redux-persist/integration/react";
 import {Provider} from "react-redux";
+import History from './components/history'
 
 const darkTheme = createTheme({
   palette: {
@@ -27,6 +28,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+
   return (
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
@@ -43,6 +45,7 @@ function App() {
                 maxWidth={'xl'}
               >
                 <FabIcon/>
+                <History />
                 <Router/>
               </Container>
             </PersistGate>
