@@ -16,7 +16,7 @@ const FabIcon = () => {
   const [csvData, setCsvData] = useState<CsvType[]>([])
   const dispatch = useAppDispatch()
 
-  useEffect(()=>{
+  useEffect(() => {
     const csv = data.map(item => {
       return {
         id: item.id,
@@ -63,6 +63,14 @@ const FabIcon = () => {
         <CSVLink
           data={csvData}
           filename={'Characters.csv'}
+          onClick={() => {
+            if (isDisabled) {
+              setIsOpen(false)
+
+              return false; // 👍🏻 You are stopping the handling of component
+            }
+            console.log("Getting CSV");
+          }}
         >
           <Fab
             size={'small'}
